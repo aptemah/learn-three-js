@@ -1,0 +1,114 @@
+body {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+.font-load-helper {
+	font-family: "BebasNeueRegular";
+	position: absolute;
+	opacity: 0;
+}
+.timeline__canvas-wrap {
+	border: 2px solid #1a4096;
+	width: 786px;
+	height: 366px;
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		height: 100%;
+	}
+}
+.timeline {
+	position: relative;
+	display: inline-block;
+	@media screen and (max-width: 768px) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		height: 100%;
+	}
+}
+.timeline__scale {
+	position: absolute;
+	top: 106px;
+	left: -10px;
+	display: inline-block;
+	height: 244px;
+	z-index: 1;
+}
+.timeline__date-strip {
+	position: relative;
+	padding: 0 10px;
+	&:after {
+		content: "";
+		display: block;
+		width: 17px;
+		border-top: 1px solid #1a4096;
+	}
+	&.timeline__date-strip--active {
+		&:after {
+			content: "";
+			display: block;
+			width: 17px;
+			border-top: 2px solid #1a4096;
+		}
+		.timeline__date-value {
+			opacity: 1;
+		}
+	}
+}
+.timeline__date-value {
+	position: absolute;
+	top: 4px;
+	right: -19px;
+	opacity: 0;
+	font-family: ProximaNova-Bold;
+	font-size: 9px;
+	letter-spacing: 1px;
+}
+.timeline__decor {
+	position: relative;
+	display: inline-block;
+	padding: 33px 54px 0 55px;
+	margin: 0px;
+	@media screen and (max-width: 768px) {
+		padding: 0;
+		height: 100%;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: 14px;
+		right: 37px;
+		width: 131px;
+		height: 104px;
+		background: url(../img/right_decor.png) 50%/131px 104px no-repeat;
+		@media screen and (max-width: 768px) {
+			top: -49px;
+			right: -18px;
+		}
+	}
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0px;
+		left: 12px;
+		width: 196px;
+		height: 408px;
+		background: url(../img/left_decor.png) 50%/196px 408px no-repeat;
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+}
+.timeline__scroll-to {
+	position: absolute;
+	right: 0;
+	top: 133px;
+	width: 10px;
+	height: 172px;
+	background: url(../img/scroll.png) 50%/10px 172px no-repeat;
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+}
